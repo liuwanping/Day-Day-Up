@@ -10,7 +10,7 @@
 //Output: 1
 //Explanation: The longest continuous increasing subsequence is [2], its length is 1. 
 //Note: Length of the array will not exceed 10,000.
-public class LongestContinuousIncreasingSubsequence 
+public class findLengthOfLCIS 
 {
 	public static void main(String[] args) 
 	{
