@@ -11,8 +11,6 @@
 //Note:
 //The given number is in the range [0, 108]
 
-
-
 public class maximumSwap 
 {
 	public static void main(String[] args) 
