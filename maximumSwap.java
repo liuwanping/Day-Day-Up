@@ -12,34 +12,35 @@
 //The given number is in the range [0, 108]
 
 
-import java.util.ArrayList;
-
 
 public class maximumSwap 
 {
 	public static void main(String[] args) 
-	{
-		
+	{	
+		System.out.print(maximumSwap(9973));
 	}
-	public int maximumSwap(int num) 
+	public static int maximumSwap(int num) 
 	{
-		String s=new String(Integer.toString(num));
-        int max=0;
-        int min=0;
-        int cur=0;
-        int point=0;
-        while (num%10!=0) 
-        {
-			cur=num%10;
-			if(cur>max)
-				max=point;
-			if(cur<min)
-				min=point;
-			point++;
-		}
-        char temp;
-        temp=s.charAt(min);
+        char numArray[]=String.valueOf(num).toCharArray();
+     
+        int max = num;
         
+        for(int i=0;i<numArray.length;i++)
+        {
+        	for (int j = i+1; j < numArray.length; j++) 
+        	{
+				char tmp1=numArray[i];
+				numArray[i]=numArray[j];
+				numArray[j]=tmp1;
+				int tmp2=Integer.parseInt(new String(numArray));
+	        	if(tmp2>max)
+	        		max=tmp2;
+				numArray[j]=numArray[i];
+				numArray[j]=tmp1;        		
+			}      	
+        }
+        
+		return max;
     }
 }
 
