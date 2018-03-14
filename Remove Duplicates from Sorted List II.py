@@ -20,10 +20,8 @@ def deleteDuplicates(self, head):
     	while cur.next!=None and cur.val==cur.next.val:
     		cur=cur.next
     	if pre.next==cur:
-    		fh.next=cur
-    		fh=fh.next
     		pre=pre.next
     	else:
-    		pre=cur
-    		cur=cur.next
-    return 
+    		pre.next=cur.next
+    	cur=cur.next
+    return fh.next
