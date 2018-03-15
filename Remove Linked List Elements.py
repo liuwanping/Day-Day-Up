@@ -11,18 +11,25 @@ class Solution(object):
         :type val: int
         :rtype: ListNode
         """
-        cur = ListNode(0)
+
+        if head == None:
+            return head
         pre = ListNode(0)
         fh = ListNode(0)
-        pre.next = cur
-        cur = head
+
+        pre.next = head
         fh = pre
-        while pre and cur:
-        	cur=pre.next
-        	if cur.val == val:
-        		pre.next = cur.next
-        		pre = pre.next
+
+        while head:
+        	while head!=None and head.val==val:
+        		head=head.next
+        	if head!=None:
+        		pre.next=head
+        		pre=pre.next
+        		head=head.next
         	else:
-        		pre=cur
+        		pre.next=head
+
                 
         return fh.next      
+
