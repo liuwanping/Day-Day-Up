@@ -20,7 +20,8 @@ The linked lists must retain their original structure after the function returns
 You may assume there are no cycles anywhere in the entire linked structure.
 Your code should preferably run in O(n) time and use only O(1) memory.
 
-====================================
+==============================================================
+
 Solution1:
 
 一开始自己的想法是把 
@@ -47,7 +48,8 @@ b1 → b2 → b3 → c1 → c2 → c3
 然后判断len(A)和len(B)的大小，做差，并把较长的那个的head向后移动差值大小的位置，
 这时候A和B的尾部已经对齐，开始同时从新head位置往后遍历，直至找打交叉点位置。
 
-————————————————————————————————————
+———————————————————————————————————————————————————————————
+
 Solution2:
 
 这是看discuss学到的方法，非常简洁好用！
