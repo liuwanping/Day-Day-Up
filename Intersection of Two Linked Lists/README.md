@@ -23,15 +23,18 @@ Your code should preferably run in O(n) time and use only O(1) memory.
 
 Solution1:
 
-一开始自己的想法是把 	a1 → a2 → c1 → c2 → c3					
-						↑(指针headA)											
-						b1 → b2 → b3 → c1 → c2 → c3  		   
-						↑(指针headB)											
+一开始自己的想法是把 
 
-变成					a1 → a2 → c1 → c2 → c3
-						↑(指针headA)
-				   b1 → b2 → b3 → c1 → c2 → c3
-						↑(指针headB)
+a1 → a2 → c1 → c2 → c3					
+↑(指针headA)											
+b1 → b2 → b3 → c1 → c2 → c3  		   
+↑(指针headB)											
+
+变成					
+     a1 → a2 → c1 → c2 → c3
+     ↑(指针headA)
+ b1 → b2 → b3 → c1 → c2 → c3
+↑(指针headB)
 						
 这就需要分别遍历A和B，计算出len(A)和len(B)，
 然后判断len(A)和len(B)的大小，做差，并把较长的那个的head向后移动差值大小的位置，
@@ -42,17 +45,19 @@ Solution2:
 
 这是看discuss学到的方法，非常简洁好用！
 
-思路是把 a1 → a2 → c1 → c2 → c3 
-         ↑(指针headA)
-         b1 → b2 → b3 → c1 → c2 → c3 
-         ↑(指针headB)
+思路是把 
+a1 → a2 → c1 → c2 → c3 
+↑(指针headA)
+b1 → b2 → b3 → c1 → c2 → c3 
+↑(指针headB)
 
-变成     a1 → a2 → c1 → c2 → c3 → b1 → b2 → b3 → c1 → c2 → c3
-         ↑(指针headA)
-         b1 → b2 → b3 → c1 → c2 → c3 → a1 → a2 → c1 → c2 → c3
-         ↑(指针headB)
+变成     
+a1 → a2 → c1 → c2 → c3 → b1 → b2 → b3 → c1 → c2 → c3
+↑(指针headA)
+b1 → b2 → b3 → c1 → c2 → c3 → a1 → a2 → c1 → c2 → c3
+↑(指针headB)
 
 方法是如果headA不为空：headA=headA.next，如果为空：headA=headB，这样就把两个链表接到一起了。
-下面链表也是相同，这样只要一个while就可以解决。	 
+下面链表也是相同，这样只要一个while就可以解决。简单来说就是把a+c与b+c变成(a+c+b)+c与(b+c+a)+c。	 
 
 						
