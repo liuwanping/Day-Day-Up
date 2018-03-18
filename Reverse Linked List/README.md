@@ -11,14 +11,25 @@ Solution:
 首先要在head前面加一个指向None的指针，然后依次向后遍历即可，突然觉得文字不如代码清晰，那就贴段代码吧。
 
 def reverseList(self, head):
+
 	"""
+	
 	:type head: ListNode
+	
 	:rtype: ListNode
+	
 	"""
+	
 	pre = None
+	
 	while head:
+	
 		nxt = head.next
+		
 		head.next = pre
+		
 		pre = head
+		
 		head = nxt
+		
 	return pre
