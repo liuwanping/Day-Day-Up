@@ -37,7 +37,7 @@ class Solution(object):
     #solution2:
     def generate(self, numRows):
         res = [[1]]
-        for x in range(numRows-1):
+        for i in range(numRows-1):
             res += [map(lambda x,y:x+y,[0]+res[-1],res[-1]+[0])]
         return res[0:numRows]
 
